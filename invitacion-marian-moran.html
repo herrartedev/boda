@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap demo</title>
+    
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courgette">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Staatliches">
+
+
+        <style>
+
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+.marron {
+    background-color: #CD9C2B;
+}
+
+
+.container h1,
+.container p{
+    text-align: center;
+    padding: 20px 0;
+}
+
+.center-abs{
+    top:40%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    position: absolute;
+}
+
+.chart{
+    position: relative;
+    width:25%;
+    height: 260px;
+}
+.chart h3{
+    color:#9E730F;
+    font-size: 1.8em;
+    position: absolute;
+    bottom:10px;
+    text-align: center;
+    width: 100%;
+    text-shadow: 1px 1px 10px #E2C480 ;
+}
+.chart svg{
+    z-index: 2;
+}
+/* DIV CIRCULO DE FONDO */
+.circle{
+    width: 150px;
+    height:150px;
+    border-radius: 50%;
+    z-index:1;
+    border:10px #E2C480   solid;
+}
+.text{
+    z-index: 3;
+    text-align: center;
+    width: 100%;
+    font-size: 3.8em;
+    font-weight: 700;
+    color: #9E730F;
+}
+/* SVG CIRCULO */
+.outer{
+    fill:transparent;
+    stroke: #9E730F;
+    stroke-width: 10; /* grosor del borde */
+    stroke-dasharray: 439; /* numero de relleno del borde, se usa el mismo valor en el script.js */
+    transform: rotate(270deg) translate(-150px, 0); 
+    /* giramos el circulo para que su apertura sea en la parte superior 
+    y ajustamos su posicion
+    */
+}
+
+
+
+
+            h1 {
+              font-family: 'Courgette', serif;
+              font-size: 48px;
+            }
+
+            p {
+              font-family: 'Crimson Pro', serif;
+              font-size: 20px;
+            }
+            .temporizador {
+              font-family: 'Staatliches', serif;
+              font-size: 40px;
+            }
+
+            .color2 {
+                background-color: #D3A94A ;
+            }
+
+            .color3 {
+                background-color: #383329;
+            }
+            
+          </style>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    </head>
+
+    <body>
+    
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    <img src="img/imagen2.jpg" class="d-block w-100" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>DIJO QUE SI</h1>
+                        <h5>Marian Moran <br>&<br> Mario Herrarte</h5>
+                    </div>
+                    </div>
+                    <div class="carousel-item">
+                    <img src="img/imagen2.jpg" class="d-block w-100" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>Second slide label</h1>
+                        <h5>Some representative placeholder content for the second slide.</h5>
+                    </div>
+                    </div>
+                    <div class="carousel-item">
+                    <img src="img/imagen2.jpg" class="d-block w-100" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>Third slide label</h1>
+                        <h5>Some representative placeholder content for the third slide.</h5>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div data-aos="fade" data-aos-offset="300" data-aos-delay="0" class="container-fluid text-center mt-5 p-3">
+        <h1>Marian Moran <br>&<br> Mario Herrarte</h1>
+    </div>
+    <div class="container text-center">
+        <hr class="mx-5">
+        <p class="pt-5">El día más importante de<br>nuestras vidas ha llegado</p>
+    </div>
+    <div class="container-fluid text-center mt-5 marron text-white">
+        <h1 class="p-5">¡NOS CASAMOS!</h1>
+    </div>
+    <center>
+        <p class="pt-5">Sabado 10 de Diciembre de 2022</p>
+    </center>
+    
+    </div>
+
+
+
+
+    <center>
+    <div  class="container">
+        <div class="charts">
+            <div class="row">
+                <div class="col-md-3">
+                    <div data-aos="fade-up" data-aos-offset="300" class="chart">
+                        <!-- un circulo inicial de fondo -->
+                        <div class="circle center-abs"></div>
+                        <!-- area para SVG -->
+                        <svg class="center-abs" width="150" height="150">
+                            <!-- un segundo circulo en SVG con su ubicacion en coordenadas x,y y el radio de expansion -->
+                            <circle class="outer" cx="75" cy="75" r="70" />
+                        </svg>
+                        <!-- etiqueta para el contador, en este caso el dia -->
+                        <span class="text center-abs" id="days"></span>
+                        <h3>Días</h3>
+                    </div>
+                </div>
+                <div class="col-md-3">
+
+                    <div data-aos="fade-up" data-aos-offset="300" class="chart">
+                        <div class="circle center-abs"></div>
+                        <svg class="center-abs" width="150" height="150">
+                            <circle class="outer" cx="75" cy="75" r="70" />
+                        </svg>
+                        <span class="text center-abs" id="hours"></span>
+                        <h3>Horas</h3>
+                    </div>
+                </div>
+                <div class="col-md-3">
+
+            <div data-aos="fade-up" data-aos-offset="300"  class="chart">
+                <div class="circle center-abs"></div>
+                <svg class="center-abs" width="150" height="150">
+                    <circle class="outer" cx="75" cy="75" r="70" />
+                </svg>
+                <span class="text center-abs" id="minutes"></span>
+                <h3>Minutos</h3>
+            </div>
+                </div>
+                <div class="col-md-3">
+                
+            <div data-aos="fade-up" data-aos-offset="300" class="chart">
+                <div class="circle center-abs"></div>
+                <svg class="center-abs" width="150" height="150">
+                    <circle class="outer" cx="75" cy="75" r="70" />
+                </svg>
+                <span class="text center-abs" id="seconds"></span>
+                <h3>Segundos</h3>
+            </div>
+                </div>
+        </div>
+        </div>
+    </div>
+
+
+    <div data-aos="fade-up" data-aos-offset="300" class="container-fluid color2 text-white p-3 mt-5 animate__animated animate__fadeIn">
+        <p>¡Es un placer invitarlos!</p>
+        <h4>Familia Herrarte Moran</h4>
+        <p>Es un gusto para nostros invitarlos a nuestra boda! Abajo encontrarán los detalles del evento y el enlace para confirmar su asistencia!</p>
+    </div>
+
+    <div data-aos="fade-up" data-aos-offset="300" class="container-fluid color3 text-white mt-0">
+        <p class="p-4">Invitación Valida para 2 Personas</p>
+    </div>
+
+    <div class="container-fluid my-5 p-3">
+        <p>¡Este día es muy especial y que vayas lo hace aún más!
+            <br>Confirma tu Asistencia
+        </p>
+        <form target="_blank" action="https://formsubmit.co/ingherrarte@gmail.com" method="POST">
+            <input type="hidden" name="invitado" value="Marian Moran">
+            <input type="hidden" name="Asistencia" value="Confirmado">
+            <input type="hidden" name="_next" value="https://herrartedev.github.io/index.html">
+            <button class="btn btn-lg btn-primary mt-4">Confirmar Asistencia</button><br>
+        </form>
+        <form target="_blank" action="https://formsubmit.co/ingherrarte@gmail.com" method="POST">
+            <input type="hidden" name="invitado" value="Marian Moran">
+            <input type="hidden" name="Asistencia" value="No Podre Asistir">
+            <input type="hidden" name="_next" value="https://herrartedev.github.io/index.html">
+            <button class="btn btn-sm btn-primary mt-4">No Podré Asistir</button><br>
+        </form>
+    </div>
+
+    
+
+
+
+
+
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+
+
+
+    <script>
+        // Set the date we're counting down to
+        // Establecer la fecha aqui, en formato ingles
+        var countDownDate = new Date("Dec 10, 2022 17:30:00").getTime();
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+        // Get today's date and time
+        var now = new Date().getTime();
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        // Display the result in the element with id="demo"
+        document.getElementById("days").innerHTML =  days;
+        document.getElementById("hours").innerHTML =  hours;
+        document.getElementById("minutes").innerHTML =  minutes;
+        document.getElementById("seconds").innerHTML =  seconds;
+        // aqui añadimos nuestra funcion, para que se segun 
+        // el conteo regresivo anime los circulos
+        effectCircle(days, hours, minutes, seconds);
+        }, 1000);
+        effectCircle = function(d, h, m, s){
+            // valores maximos
+            const max_sec = 60;
+            const max_min = 60;
+            const max_hour = 24;
+            const max_day = 30;
+            // valor del relleno del contorno
+            // ojo es el mismo establecido en la hoja de estilos
+            const strokeDashoffset = 439; 
+            var circleSVG = document.getElementsByClassName('outer');
+            // circulo dias
+            var valPerDay = strokeDashoffset / max_day; // el valor de cada periodo segun la longitud del circulo
+            var size = strokeDashoffset - (valPerDay * d); // restamos el valor del periodo a la longitud del circulo
+            circleSVG[0].style.strokeDashoffset = size; // establemos nuevo valor al la longitud del circulo
+            // circulo horas
+            var valPerHour = strokeDashoffset / max_hour;
+            var size = strokeDashoffset - (valPerHour * h);
+            circleSVG[1].style.strokeDashoffset = size;
+            // circulo minutos
+            var valPerMin = strokeDashoffset / max_min;
+            var size = strokeDashoffset - (valPerMin * m);
+            circleSVG[2].style.strokeDashoffset = size;
+            // circulo segundos
+            var valPerSecond = strokeDashoffset / max_sec;
+            var size = strokeDashoffset - (valPerSecond * s);
+            circleSVG[3].style.strokeDashoffset = size;
+        } 
+    </script>
+
+
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+    </script>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    </body>
+</html>
